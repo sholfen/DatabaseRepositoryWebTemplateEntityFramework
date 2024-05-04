@@ -22,11 +22,13 @@ namespace DBLib.Repositories
         public void AddItem<T>(T item) where T : class
         {
             _db.Add(item);
+            _db.SaveChanges();
         }
 
         public void UpdateItem<T>(T item) where T : class
         {
             _db.Update(item);
+            _db.SaveChanges();
         }
 
         public void ExecuteSQL(string sql, object[] parameters)
